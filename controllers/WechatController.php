@@ -27,7 +27,8 @@ class WechatController extends Controller
 
             'log' => [
                 'level' => 'debug',
-                'file' => __DIR__.'/wechat.log',
+//                'file' => __DIR__.'/wechat.log',
+                'file' => '@runtime/logs/wechat.log',
             ],
         ];
         $app = Factory::officialAccount($config);
@@ -35,8 +36,8 @@ class WechatController extends Controller
 
 
         $msg = $this->app->server->getMessage();
-        $openId = $msg['FromUserName'];
-        $keywords = $msg['Content'];//接收关键字
+        $openId = $msg->FromUserName;
+        $keywords = $msg->Content;//接收关键字
         $message = new Text("您刚才说： ".$keywords);
         $app->customer_service->message($message)->to($openId)->send();
 
