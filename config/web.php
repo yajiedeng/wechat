@@ -61,6 +61,7 @@ $config = [
         */
     ],
     'params' => $params,
+    'timeZone' => 'Asia/Shanghai',
 ];
 
 if (YII_ENV_DEV) {
