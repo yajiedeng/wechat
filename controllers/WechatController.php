@@ -8,7 +8,7 @@
 namespace app\controllers;
 
 use EasyWeChat\Factory;
-use yii\web\Controller;
+use yii\base\Controller;
 use Yii;
 use yii\log\Logger;
 use EasyWeChat\Kernel\Messages\Text;
