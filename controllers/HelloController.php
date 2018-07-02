@@ -16,14 +16,14 @@ class HelloController extends Controller
     {
 
         // session
-        $session = Yii::$app->session;
-        // session 是否开启
-        if($session->isActive){
-            echo "session active";
-        }else{
-            // 开启session
-            $session->open();
-        }
+//        $session = Yii::$app->session;
+//        // session 是否开启
+//        if($session->isActive){
+//            echo "session active";
+//        }else{
+//            // 开启session
+//            $session->open();
+//        }
 
         // 获取响应组件
 //        $response = Yii::$app->response;
@@ -35,18 +35,18 @@ class HelloController extends Controller
         // 文件下载
 //        $response->sendFile('robots.txt');
 //        // 获取请求参数值
-//        $request = Yii::$app->request;
+        $request = Yii::$app->request;
 //
 //        // 判断请求类型
-//        if($request->isGet){
-//            // 获取 get 参数
-//            echo $request->get('id',20)."<br/>";
-//            echo "this is get method";
-//        }elseif ($request->isPost){
-//            // 获取 post 参数
-//            echo $request->post('id',15)."<br/>";
-//            echo "this is post method";
-//        }
+        if($request->isGet){
+            // 获取 get 参数
+            echo $request->get('id',20)."<br/>";
+            echo "this is get method";
+        }elseif ($request->isPost){
+            // 获取 post 参数
+            echo $request->post('id',15)."<br/>";
+            echo "this is post method";
+        }
 //
 
 //        echo "hello world";
