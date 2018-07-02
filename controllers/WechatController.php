@@ -39,7 +39,7 @@ class WechatController extends Controller
 
         $msg = $app->server->getMessage();
 
-        Yii::getLogger()->log("info:".$msg);
+        Yii::info("info:".$msg);
 
         $openId = $msg->FromUserName;
         $keywords = $msg->Content;//接收关键字
