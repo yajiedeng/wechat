@@ -29,8 +29,8 @@ class WechatController extends Controller
 
             'log' => [
                 'level' => 'debug',
-//                'file' => __DIR__.'/wechat.log',
-                'file' => '@runtime/logs/wechat.log',
+                'file' => __DIR__.'/../runtime/logs/wechat.log',
+//                'file' => '@runtime/logs/wechat.log',
             ],
         ];
         $app = Factory::officialAccount($config);
