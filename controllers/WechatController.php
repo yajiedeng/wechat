@@ -9,6 +9,7 @@ namespace app\controllers;
 
 use EasyWeChat\Factory;
 use yii\web\Controller;
+use EasyWeChat\Kernel\Messages\Text;
 
 
 class WechatController extends Controller
@@ -30,6 +31,15 @@ class WechatController extends Controller
             ],
         ];
         $app = Factory::officialAccount($config);
+
+
+
+        $msg = $this->app->server->getMessage();
+        $openId = $msg['FromUserName'];
+        $keywords = $msg['Content'];//接收关键字
+        $message = new Text("您刚才说： ".$keywords);
+        $app->customer_service->message($message)->to($openId)->send();
+
         $response = $app->server->serve();
         $response->send();
     }
