@@ -9,7 +9,7 @@ namespace app\weixin\wechat\controllers;
 
 use app\weixin\wechat\controllers\WeixinController;
 use app\weixin\wechat\controllers\MessageController;
-use EasyWeChat\Kernel\Messages\TextCard;
+use EasyWeChat\Kernel\Messages\Text;
 use Yii;
 
 class WechatController extends WeixinController
