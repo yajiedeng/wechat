@@ -18,7 +18,7 @@ class MessageController extends WeixinController
         return "fdsklfjlkdsaf";
     }
     // 回复文本消息
-    public function actionText($content = 'hello',$openId = '')
+    public function actionText($content,$openId = '')
     {
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();

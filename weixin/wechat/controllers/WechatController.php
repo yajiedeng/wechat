@@ -46,7 +46,7 @@ class WechatController extends WeixinController
 //            $response->send();
 
 
-            Yii::$app->runAction("wechat/message/text");
+            Yii::$app->runAction("wechat/message/text",['content'=>$content]);
 
 //            $message->actionResponseText($content);
 
