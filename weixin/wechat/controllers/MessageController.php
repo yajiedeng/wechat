@@ -14,7 +14,7 @@ use EasyWeChat\Kernel\Messages\Text;
 class MessageController extends WeixinController
 {
     // 回复文本消息
-    public function actionResponseText($content,$openId = '')
+    public function actionResponseText($content = 'hello',$openId = '')
     {
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();
@@ -36,10 +36,15 @@ class MessageController extends WeixinController
     }
 
     // 发送消息
-    private function actionResponse($message,$openId)
+    public function actionResponse($message,$openId)
     {
         $this->app->customer_service->message($message)->to($openId)->send();
         $response = $this->app->server->serve();
         $response->send();
+    }
+
+    public function actionTest($content)
+    {
+        echo 'message test '.$content;
     }
 }
