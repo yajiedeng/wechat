@@ -37,7 +37,7 @@ class WechatController extends WeixinController
 //            $message  = new MessageController();
             $content = "您刚才讲 ： ".$keywords;
 
-            Yii::$app->runAction("Message/responseText",['content'=>$content]);
+            Yii::$app->runAction("Wechat/Message/responseText",['content'=>$content]);
 
 //            $message->actionResponseText($content);
 
