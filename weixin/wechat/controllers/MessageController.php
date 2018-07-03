@@ -18,7 +18,7 @@ class MessageController extends WeixinController
         return "fdsklfjlkdsaf";
     }
     // 回复文本消息
-    public function actionText($content,$openId = '')
+    public function actionText($content = 'hello',$openId = '')
     {
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();
@@ -49,8 +49,8 @@ class MessageController extends WeixinController
         $response->send();
     }
 
-    public function actionTest($content)
+    public function actionTest($content = 'hello')
     {
-        return 'message test '.$content;
+        echo 'message test '.$content;
     }
 }
