@@ -8,13 +8,20 @@
 namespace app\weixin\wechat\controllers;
 
 use app\weixin\wechat\controllers\WeixinController;
+use app\weixin\wechat\controllers\MessageController;
 use Yii;
 
 class WechatController extends WeixinController
 {
     public function actionIndex()
     {
-        echo "wechat index";
+        $request = Yii::$app->request;
+        if($request->isGet){
+            echo "wechat index";
+        }else{
+            echo "wechat index1";
+        }
+
     }
 
     // 接受微信消息
