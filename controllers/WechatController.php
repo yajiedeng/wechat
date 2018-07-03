@@ -39,7 +39,7 @@ class WechatController extends Controller
 
         $msg = $app->server->getMessage();
 
-        Yii::info("info:".$msg);
+        Yii::info("收到微信发送来的消息： ".$msg);
 
         $openId = $msg->FromUserName;
         $keywords = $msg->Content;//接收关键字
