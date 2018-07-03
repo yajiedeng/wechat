@@ -28,7 +28,7 @@ class WeixinController extends Controller
 
             'log' => [
                 'level' => 'debug',
-                'file' => __DIR__.'/../runtime/logs/wechat.log',
+                'file' => APP_PATH.'/runtime/logs/wechat.log',
             ],
         ];
         $this->app = Factory::officialAccount($config);

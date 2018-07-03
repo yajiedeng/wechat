@@ -1,0 +1,2 @@
+[2018-07-03 15:49:58] NULL.DEBUG: Request received: {"method":"GET","uri":"http://yii.cn/?r=wechat%2Fwechat%2Fserve","content-type":null,"content":""} 
+[2018-07-03 15:49:58] NULL.DEBUG: Server response created: {"content":"success"} 
