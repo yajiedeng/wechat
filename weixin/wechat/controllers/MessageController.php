@@ -10,6 +10,7 @@ namespace app\weixin\wechat\controllers;
 
 use EasyWeChat\Kernel\Messages\Image;
 use EasyWeChat\Kernel\Messages\Text;
+use Yii;
 
 class MessageController extends WeixinController
 {
@@ -18,8 +19,11 @@ class MessageController extends WeixinController
         return "fdsklfjlkdsaf";
     }
     // 回复文本消息
-    public function actionText($content = 'hello',$openId = '')
+    public function actionText()
     {
+        $request = Yii::$app->request;
+        $content = $request->get('content','hello');
+        $openId = $request->get('openId','');
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();
             $openId = $messageObj->FromUserName;
