@@ -13,8 +13,12 @@ use EasyWeChat\Kernel\Messages\Text;
 
 class MessageController extends WeixinController
 {
+    public function actionIndex()
+    {
+        return "fdsklfjlkdsaf";
+    }
     // 回复文本消息
-    public function actionResponseText($content = 'hello',$openId = '')
+    public function actionText($content = 'hello',$openId = '')
     {
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();
