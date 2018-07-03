@@ -29,7 +29,7 @@ class WechatController extends WeixinController
             $keywords = $messageObj->Content;//接收关键字
             $message  = new MessageController();
             $content = "您刚才讲 ： ".$keywords;
-            $message->actionResponseText();
+            $message->actionResponseText($content);
         }
     }
 
