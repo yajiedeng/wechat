@@ -9,7 +9,7 @@
 namespace app\weixin\wechat\controllers;
 
 use EasyWeChat\Factory;
-use yii\web\Controller;
+use yii\base\Controller;
 
 class WeixinController extends Controller
 {

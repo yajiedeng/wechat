@@ -45,6 +45,6 @@ class MessageController extends WeixinController
 
     public function actionTest($content)
     {
-        echo 'message test '.$content;
+        return 'message test '.$content;
     }
 }
