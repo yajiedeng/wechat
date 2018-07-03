@@ -21,7 +21,9 @@ class MessageController extends WeixinController
             $openId = $messageObj->FromUserName;
         }
         $message = new Text($content);
-        $this->actionResponse($message,$openId);
+        $this->app->customer_service->message($message)->to($openId)->send();
+        $response = $this->app->server->serve();
+        $response->send();
     }
 
     // 回复图片消息
