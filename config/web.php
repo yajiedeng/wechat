@@ -5,6 +5,14 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'modules' => [
+        'wechat' => [
+            'class' => 'app\weixin\wechat\wechat',
+        ],
+        'admin' => [
+            'class' => 'app\weixin\admin\admin',
+        ],
+    ],
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [

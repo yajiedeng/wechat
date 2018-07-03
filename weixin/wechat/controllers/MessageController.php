@@ -1,0 +1,45 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: 邓超
+ * Date: 2018/7/3
+ * Time: 15:32
+ */
+
+namespace app\weixin\wechat\controllers;
+
+use EasyWeChat\Kernel\Messages\Image;
+use EasyWeChat\Kernel\Messages\Text;
+
+class MessageController extends WeixinController
+{
+    // 回复文本消息
+    public function actionResponseText($content,$openId = '')
+    {
+        if(empty($openId)){
+            $messageObj = $this->app->server->getMessage();
+            $openId = $messageObj->FromUserName;
+        }
+        $message = new Text($content);
+        $this->actionResponse($message,$openId);
+    }
+
+    // 回复图片消息
+    public function actionResponseImage($media,$openId = '')
+    {
+        if(empty($openId)){
+            $messageObj = $this->app->server->getMessage();
+            $openId = $messageObj->FromUserName;
+        }
+        $message = new Image($media);
+        $this->actionResponse($message,$openId);
+    }
+
+    // 发送消息
+    private function actionResponse($message,$openId)
+    {
+        $this->app->customer_service->message($message)->to($openId)->send();
+        $response = $this->app->server->serve();
+        $response->send();
+    }
+}
