@@ -19,11 +19,11 @@ class MessageController extends WeixinController
         return "fdsklfjlkdsaf";
     }
     // 回复文本消息
-    public function actionText()
+    public function actionText($content = 'hello',$openId = '')
     {
-        $request = Yii::$app->request;
-        $content = $request->get('content','hello');
-        $openId = $request->get('openId','');
+//        $request = Yii::$app->request;
+//        $content = $request->get('content','hello');
+//        $openId = $request->get('openId','');
         if(empty($openId)){
             $messageObj = $this->app->server->getMessage();
             $openId = $messageObj->FromUserName;
