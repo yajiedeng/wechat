@@ -9,14 +9,15 @@
 namespace app\weixin\wechat\controllers;
 
 use EasyWeChat\Factory;
-use yii\base\Controller;
+use yii\web\Controller;
 
 class WeixinController extends Controller
 {
     public $app;
     public function init()
     {
-        parent::init();
+//        parent::init();
+//        parent::__construct();
         // 公众号配置信息
         $config = [
             'app_id' => 'wxe52d47b93aeae351',
