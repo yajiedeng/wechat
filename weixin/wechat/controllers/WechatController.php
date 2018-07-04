@@ -35,19 +35,19 @@ class WechatController extends WeixinController
         }elseif ($request->isPost){
             $messageObj = $this->app->server->getMessage();
             $keywords = $messageObj->Content;//接收关键字
-//            $message  = new MessageController();
+            $message  = new MessageController();
             
 //            $openId = $messageObj->FromUserName;
             $content = "您刚才讲 ： ".$keywords;
 
 //            $message = new Text($content);
-//
+
 //            $this->app->customer_service->message($message)->to($openId)->send();
 //            $response = $this->app->server->serve();
 //            $response->send();
 
-
-            Yii::$app->runAction("wechat/message/text&content=".$content);
+            $message->text($content);
+//            Yii::$app->runAction("wechat/message/text",['content'=>$content]);
 
 //            $message->actionResponseText($content);
 
