@@ -16,7 +16,9 @@ class WechatController extends WeixinController
 {
     public function actionIndex()
     {
-        Yii::$app->runAction("wechat/message/test",['content'=>'content']);
+//        echo "wechat/wechat";
+        $content = "jfkldsflchf211654";
+        Yii::$app->runAction("wechat/message/test",['content'=>$content]);
 //        if($request->isGet){
 //            echo "wechat index";
 //        }else{
@@ -47,7 +49,7 @@ class WechatController extends WeixinController
 //            $response->send();
 
 //            $message->text($content);
-            Yii::$app->runAction("wechat/message/text",['content'=>'jiege']);
+            return Yii::$app->runAction("wechat/message/text",['content'=>$content]);
 
 //            $message->actionResponseText($content);
 
