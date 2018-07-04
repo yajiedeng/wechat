@@ -16,6 +16,7 @@ class WeixinController extends Controller
     public $app;
     public function init()
     {
+        parent::init();
         // 公众号配置信息
         $config = [
             'app_id' => 'wxe52d47b93aeae351',
